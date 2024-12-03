@@ -2,21 +2,21 @@ import numpy as np
 
 
 # weight each left id by its occurrence and sum
-def weighted_count():
-    # setup
-    file = open('day1.txt')
-    left = []
-    right = []
+def rednosed_reports():
+    file = open('day2.txt')
+    safe = 0
     for line in file:
-        clean = line.split()  # creates array of strings
-        left.append(int(clean[0]))  # cast as int, add to list
-        right.append(int(clean[1]))
-    left = np.sort(left)
-    right = np.sort(right)
+        levels = [int(num) for num in line.split()]
+        if valid(levels):
+            if levels == sorted(levels) or levels == sorted(levels, reverse=True): safe += 1
+    print(safe)
 
-    total = 0
-    left = left.tolist()
-    right = right.tolist()
-    for x in left:
-        total += (x * right.count(x))
-    print(total)
+
+# check if distance between all list elements are within range
+# part 2, one exception allowed
+def valid(nums):
+    errors = 0
+    for x in range(len(nums) - 1):
+        if abs(nums[x] - nums[x + 1]) > 3 or abs(nums[x] - nums[x + 1]) < 1: errors += 1
+        if errors > 1: return False
+    return True
