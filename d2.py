@@ -1,8 +1,8 @@
 import numpy as np
 
 
-# weight each left id by its occurrence and sum
-#
+# check int list for conditions and tally safe lists
+# pt2: one level exception allowed
 def rednosed_reports():
     file = open('day2.txt')
     safe = 0
@@ -12,7 +12,7 @@ def rednosed_reports():
         # first pass for safe, add questionable sequences to maybe
         if valid2(levels) and valid1(levels): safe += 1
         else: maybe.append(levels)
-    # second pass of maybe
+    # second pass of maybe, remove each digit and check valid
     for test in maybe:
         valid = False
         for x in range(len(test)):
