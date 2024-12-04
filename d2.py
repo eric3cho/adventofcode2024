@@ -29,6 +29,7 @@ def valid1(nums):
         if abs(nums[x] - nums[x + 1]) > 3 or abs(nums[x] - nums[x + 1]) < 1: return False
     return True
 
+
 # check if all ascending or all descending
 def valid2(nums):
     return nums == sorted(nums) or nums == sorted(nums, reverse=True)
