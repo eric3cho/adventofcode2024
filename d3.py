@@ -7,6 +7,8 @@ def mull_it_over():
     store = []
     # search every line for matches to 'mul', slice by max possible size and add to store
     for line in file:
+        # pt 2 approach:
+        # boolean switch, search for match, if switch true accept mul
         # get start of all matches in line
         indices = [match.start() for match in re.finditer('mul', line)]
         # get the chunks after mul into store
