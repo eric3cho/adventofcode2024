@@ -1,4 +1,4 @@
-Journaling my progress for 2024 Advent of Code.
+Journaling my progress for 2024 Advent of Code. <br />
 12/2 <br />
 Working in python for practice. Took some time to get the rust off and set up the repository properly but smooth sailing after that.<br />
 12/6 <br />
