@@ -6,7 +6,8 @@ def mull_it_over():
     total = 0
     store = []
     do = True
-    store = [re.findall(r'mul\(\d{1,3},\d{1,3}\)|do|don\'t', line) for line in file]
+    for line in file:
+        store.extend(re.findall(r'mul\(\d{1,3},\d{1,3}\)|do|don\'t', line))
     print(store)
 
 
