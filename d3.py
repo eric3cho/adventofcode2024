@@ -6,20 +6,15 @@ def mull_it_over():
     total = 0
     store = []
     do = True
+
     for line in file:
         store.extend(re.findall(r'mul\(\d{1,3},\d{1,3}\)|do|don\'t', line))
-    print(store)
 
-
-
-    # # go through store checking for ( , )
-    # for match in store:
-    #     start = match.find('(')
-    #     end = match.find(')')
-    #     if start < end and ',' in match[start:end]:
-    #         vals = match[start+1:end].split(',')
-    #         a = vals[0]
-    #         b = vals[1]
-    #         if a.isdigit() and b.isdigit():
-    #             total += int(a)*int(b)
-    # print(total)
+    for match in store:
+        if match == 'don\'t': do = False
+        elif match == 'do': do = True
+        else:
+            if do:
+                nums = re.findall(r"(\d+)", match)
+                total += int(nums[0]) * int(nums[1])
+    print(total)
