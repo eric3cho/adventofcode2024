@@ -4,21 +4,10 @@ import re
 def mull_it_over():
     file = open('day3.txt')
     total = 0
-    store = []
     do = True
     # search every line for matches to 'mul', slice by max possible size and add to store
-    for line in file:
-        # pt 2 approach:
-        # boolean switch, search for match, if switch true accept mul
-        if do:
-            # search for mul
-        else:
-            # search for do
-        # get start of all matches in line
-        indices = [match.start() for match in re.finditer('mul', line)]
-        # get the chunks after mul into store
-        for i in indices:
-            store.append(line[i+3:i+12])
+    seq = 'mul\(\d{1,3},\d{1,3}\)'
+    store = re.finditer(r'seq|do|don\'t', file)
     # go through store checking for ( , )
     for match in store:
         start = match.find('(')
