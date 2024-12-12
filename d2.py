@@ -21,14 +21,13 @@ def rednosed_reports():
             test.insert(x, a)
         if valid: safe += 1
     print(safe)
-
+    file.close()
 
 # check if distance between all list elements are within range
 def valid1(nums):
     for x in range(len(nums) - 1):
         if abs(nums[x] - nums[x + 1]) > 3 or abs(nums[x] - nums[x + 1]) < 1: return False
     return True
-
 
 # check if all ascending or all descending
 def valid2(nums):
