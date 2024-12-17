@@ -23,7 +23,7 @@ def check(grid, y, x):
     if x > 2:
         if grid[y][x-3] == 'S' and grid[y][x-2] == 'A' and grid[y][x-1] == 'M': count += 1
     # TOP
-    if y > 2:
+    if y > 3:
         if grid[y-3][x] == 'S' and grid[y-2][x] == 'A' and grid[y-1][x] == 'M': count += 1
         # DIAG UP RIGHT
         if x < len(grid[0])-2:
@@ -32,11 +32,11 @@ def check(grid, y, x):
         if x > 2:
             if grid[y - 1][x - 1] == 'M' and grid[y - 2][x - 2] == 'A' and grid[y - 3][x - 3] == 'S': count += 1
     # DOWN
-    if y < len(grid)-2:
+    if y < len(grid)-3:
         if grid[y+1][x] == 'M' and grid[y+2][x] == 'A' and grid[y+3][x] == 'S': count += 1
         # DIAG DOWN RIGHT
         if x < len(grid[0]) - 2:
-            if grid[y + 1][x + 1] == 'M' and grid[y - 2][x + 2] == 'A' and grid[y - 3][x + 3] == 'S': count += 1
+            if grid[y + 1][x + 1] == 'M' and grid[y + 2][x + 2] == 'A' and grid[y + 3][x + 3] == 'S': count += 1
         # DIAG DOWN LEFT
         if x > 2:
            if grid[y+1][x-1] == 'M' and grid[y+2][x-2] == 'A' and grid[y+3][x-3] == 'S': count += 1
