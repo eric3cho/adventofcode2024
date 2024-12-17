@@ -6,8 +6,8 @@ def ceres_search():
     found = 0
     file = open('day4.txt')
     grid = [line.strip() for line in file.readlines()]
-    for y in range(len(grid[0])):
-        for x in range(y):
+    for y in range(len(grid)):
+        for x in range(len(grid[0])):
             if grid[y][x] == 'X':
                 found += check(grid, y, x)
     print(found)
