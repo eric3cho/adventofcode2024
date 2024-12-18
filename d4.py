@@ -17,13 +17,13 @@ def ceres_search():
 def check(grid, y, x):
     count = 0
     # RIGHT
-    if x < len(grid[0])-2:
+    if x < len(grid[0])-3:
         if grid[y][x+1] == 'M' and grid[y][x+2] == 'A' and grid[y][x+3] == 'S': count+=1
     # LEFT
     if x > 2:
         if grid[y][x-3] == 'S' and grid[y][x-2] == 'A' and grid[y][x-1] == 'M': count += 1
     # TOP
-    if y > 3:
+    if y > 2:
         if grid[y-3][x] == 'S' and grid[y-2][x] == 'A' and grid[y-1][x] == 'M': count += 1
         # DIAG UP RIGHT
         if x < len(grid[0])-2:
@@ -35,7 +35,7 @@ def check(grid, y, x):
     if y < len(grid)-3:
         if grid[y+1][x] == 'M' and grid[y+2][x] == 'A' and grid[y+3][x] == 'S': count += 1
         # DIAG DOWN RIGHT
-        if x < len(grid[0]) - 2:
+        if x < len(grid[0]) - 3:
             if grid[y + 1][x + 1] == 'M' and grid[y + 2][x + 2] == 'A' and grid[y + 3][x + 3] == 'S': count += 1
         # DIAG DOWN LEFT
         if x > 2:
