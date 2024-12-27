@@ -17,7 +17,7 @@ def ceres_search():
 def check(grid, y, x):
     count = 0
     # RIGHT
-    if x < len(grid[0])-2:
+    if x < len(grid[0])-3:
         if grid[y][x+1] == 'M' and grid[y][x+2] == 'A' and grid[y][x+3] == 'S': count+=1
     # LEFT
     if x > 2:
