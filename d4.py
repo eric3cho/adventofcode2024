@@ -26,7 +26,7 @@ def check(grid, y, x):
     if y > 2:
         if grid[y-3][x] == 'S' and grid[y-2][x] == 'A' and grid[y-1][x] == 'M': count += 1
         # DIAG UP RIGHT
-        if x < len(grid[0])-2:
+        if x < len(grid[0])-3:
             if grid[y - 1][x + 1] == 'M' and grid[y - 2][x + 2] == 'A' and grid[y - 3][x + 3] == 'S': count += 1
         # DIAG UP LEFT
         if x > 2:
