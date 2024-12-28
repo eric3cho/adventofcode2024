@@ -1,4 +1,5 @@
 import d1, d2, d3, d4
+import d5
 
 # day 1
 # d1.historian_hysteria()
@@ -10,4 +11,7 @@ import d1, d2, d3, d4
 # d3.mull_it_over()
 
 # day 4
-d4.ceres_search()
+# d4.ceres_search()
+
+# day 5
+d5.print_queue()
