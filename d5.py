@@ -6,13 +6,25 @@ def print_queue():
     update_file = open('day5updates.txt')
     update = [line.strip().split(',') for line in update_file]
     sum = 0
+    # print(rules)
+    # print(update)
 
-    for line in update.readlines():
+    for line in update:
         sum += check(line, rules)
+
+    print(sum)
 
 
 # will return mid if passes rules, will return 0 otherwise
 def check(line, rules):
+    mid = 0
     # sort valid rules
+    # valid = [rule for rule in rules if all(num in line for num in rule)]
     for rule in rules:
+        # nums in rule are in update
         if all(num in line for num in rule):
+            if line.index(rule[0]) < line.index(rule[1]): mid = line[(len(line)-1)//2]
+            else:
+                mid = 0
+                break
+    return int(mid)
