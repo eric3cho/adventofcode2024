@@ -6,8 +6,6 @@ def print_queue():
     update_file = open('day5updates.txt')
     update = [line.strip().split(',') for line in update_file]
     sum = 0
-    # print(rules)
-    # print(update)
 
     for line in update:
         sum += check(line, rules)
@@ -15,8 +13,27 @@ def print_queue():
     print(sum)
 
 
-# will return mid if passes rules, will return 0 otherwise
+# pt 2: fix invalid and return mid
 def check(line, rules):
+    mid = 0
+    valid = [rule for rule in rules if all(num in line for num in rule)]
+    for rule in valid:
+        a = line.index(rule[0])
+        b = line.index(rule[1])
+        if a > b:
+            new = reconstruct(line, valid)
+            mid = new[(len[new]-1)/2]
+    return mid
+
+
+# insertion sort
+def reconstruct(line, valid):
+    new = [line[0]]
+    for i in ra
+    return new
+
+# pt 1: will return mid if passes rules, will return 0 otherwise
+def check1(line, rules):
     mid = 0
     # sort valid rules
     # valid = [rule for rule in rules if all(num in line for num in rule)]
