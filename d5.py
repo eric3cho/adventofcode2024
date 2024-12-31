@@ -26,22 +26,31 @@ def check(line, rules):
     return mid
 
 
-# insertion sort
+# reconstruct with insertion sort
 def reconstruct(line, valid):
     new = [line[0]]
-    for i in ra
+    # go through every val, place and check, if invalid move and check again
     return new
 
-# pt 1: will return mid if passes rules, will return 0 otherwise
-def check1(line, rules):
-    mid = 0
-    # sort valid rules
-    # valid = [rule for rule in rules if all(num in line for num in rule)]
-    for rule in rules:
-        # nums in rule are in update
+
+# check if current line obeys applicable rules
+def isvalid(line, valid):
+    for rule in valid:
+        # only get currently relevant rules
         if all(num in line for num in rule):
-            if line.index(rule[0]) < line.index(rule[1]): mid = line[(len(line)-1)//2]
-            else:
-                mid = 0
-                break
-    return int(mid)
+            if line.index(rule[0]) > line.index(rule[1]): return False
+    return True
+
+# pt 1: will return mid if passes rules, will return 0 otherwise
+# def check1(line, rules):
+#     mid = 0
+#     # sort valid rules
+#     # valid = [rule for rule in rules if all(num in line for num in rule)]
+#     for rule in rules:
+#         # nums in rule are in update
+#         if all(num in line for num in rule):
+#             if line.index(rule[0]) < line.index(rule[1]): mid = line[(len(line)-1)//2]
+#             else:
+#                 mid = 0
+#                 break
+#     return int(mid)
