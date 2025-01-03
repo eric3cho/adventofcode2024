@@ -22,14 +22,19 @@ def check(line, rules):
         b = line.index(rule[1])
         if a > b:
             new = reconstruct(line, valid)
-            mid = new[(len[new]-1)/2]
-    return mid
+            mid = new[(len(new)-1)//2]
+    return int(mid)
 
 
 # reconstruct with insertion sort
 def reconstruct(line, valid):
-    new = [line[0]]
+    new = []
     # go through every val, place and check, if invalid move and check again
+    for val in line:
+        for i in range(len(line)):
+            new.insert(i, val)
+            if isvalid(new, valid): break
+            else: new.remove(val)
     return new
 
 
